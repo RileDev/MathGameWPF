@@ -53,7 +53,6 @@ namespace MathGame
             btnDivide.IsEnabled = visible;
             btnSubstract.IsEnabled = visible;
             btnAdd.IsEnabled = visible;
-            btnCheck.IsEnabled = visible;
             //Difficulty Buttons
             btnDiffEasy.IsEnabled = !visible;
             btnDiffMedium.IsEnabled = !visible;
@@ -162,7 +161,8 @@ namespace MathGame
 
         private void tbUserInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            btnCheck.IsEnabled = (tbUserInput.Text.Length > 0);
+            if(isStarted)
+                btnCheck.IsEnabled = (tbUserInput.Text.Length > 0);
         }
     }
 }
